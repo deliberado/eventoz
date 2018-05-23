@@ -1,14 +1,11 @@
 <html>
 <body>
-    <menu>INICIO - CADASTRO</menu>
+    {% block topo %}
+        <menu>INICIO - <a href="/eventos">LISTA EVENTOS</a></menu>
+    {% endblock %}
     <hr />
-    <h1>Lista de eventos</h1>
-    <p>
-        <ul>
-            <li>ENCOINFO</li>
-            <li>CAOS</li>
-            <li>Jornanda de Iniciação Cientifica</li>
-        </ul>
-    </p>
+    {% block content%}
+    
+    {% endblock%}
 </body>
 </html>
