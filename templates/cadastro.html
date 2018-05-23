@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Cadastrar Novo Evento</h1>
+<form action="/criar_evento" method="POST">
+    <table>
+            <tr>
+                <td>Nome:</td>
+                <td><input type="text" name="nome"></td>
+            </tr>
+            <tr>
+                <td>Sigla:</td>
+                <td><input type="text" name="sigla"></td>
+            </tr>
+    </table>
+    <br>
+    <input type="submit" value="Salvar Cadastro"/>
+        <a href="/eventos" ><input type="button" value="Voltar"></a>
+</form>
+{% endblock %}

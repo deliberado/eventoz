@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect
 
 from flask_sqlalchemy import SQLAlchemy
 
@@ -27,6 +27,24 @@ def index():
 def lista_eventos():
     lista = Evento.query.all()
     return render_template('lista_eventos.html', eventos=lista)
+
+@app.route("/eventos/novo")
+def novo_evento():
+	return render_template("cadastro.html")
+
+
+@app.route("/criar_evento", methods=['GET', 'POST'])
+def cadastro():
+	if request.method == "POST":
+		nome = (request.form.get("nome"))
+		sigla = (request.form.get("sigla"))
+		
+		if nome and sigla:
+			p = Evento(nome=nome, sigla=sigla)
+			db.session.add(p)
+			db.session.commit()
+			
+	return redirect('/eventos')
 
 
 if __name__ == "__main__":
