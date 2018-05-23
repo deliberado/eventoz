@@ -25,7 +25,7 @@ def index():
 
 @app.route("/eventos")
 def lista_eventos():
-    lista = ['ENCOINFO', 'CAOS', 'Jornanda de Iniciação Cientifica']
+    lista = Evento.query.all()
     return render_template('lista_eventos.html', eventos=lista)
 
 
