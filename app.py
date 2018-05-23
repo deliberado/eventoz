@@ -9,7 +9,8 @@ def index():
 
 @app.route("/eventos")
 def lista_eventos():
-    return render_template('lista_eventos.html')
+    lista = ['ENCOINFO', 'CAOS', 'Jornanda de Iniciação Cientifica']
+    return render_template('lista_eventos.html', eventos=lista)
 
 app.run(debug=True, use_reloader=True)
 
